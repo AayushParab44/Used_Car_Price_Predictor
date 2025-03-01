@@ -192,7 +192,7 @@ if st.button("Predict Car Price"):
         model = joblib.load('random_forest_model1.pkl')
         
     except Exception as e:
-        st.error('Why:',model)
+        st.error(f'Why:{model}')
         st.error(f"Error loading model: {str(e)}")
         model = None  # Ensure model is set to None if loading fails
     
