@@ -2,7 +2,7 @@ GitPython
 ipykernel
 joblib
 matplotlib
-matplotlib-inlin
+matplotlib-inline
 notebook
 notebook_shim
 numpy
