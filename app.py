@@ -190,6 +190,7 @@ single_entry_df = pd.DataFrame([{col: df.get(col, 0) for col in expected_feature
 if st.button("Predict Car Price"):
     try:
         model = joblib.load('random_forest_model1.pkl')
+        st.error('Why:',model)
     except Exception as e:
         st.error(f"Error loading model: {str(e)}")
         model = None  # Ensure model is set to None if loading fails
