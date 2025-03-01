@@ -184,12 +184,14 @@ single_entry_df = pd.DataFrame([{col: df.get(col, 0) for col in expected_feature
 #     user_data = user_data[expected_features]
 
 # Display entered data
-
+import os
 
 # Prediction
 if st.button("Predict Car Price"):
     try:
-        model = joblib.load('random_forest_model1.pkl')
+        cwd = os.getcwd()
+        model_path = os.path.join(cwd, "random_forest_model1.pkl")
+        model = joblib.load(model_path)
         
     except Exception as e:
         st.error(f'Why:{model}')
