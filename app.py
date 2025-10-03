@@ -189,9 +189,10 @@ import os
 # Prediction
 if st.button("Predict Car Price"):
     try:
-        cwd = os.getcwd()
-        model_path = os.path.join(cwd, "random_forest_model1.pkl")
-        model = joblib.load(open(model_path,'rb'))
+        # cwd = os.getcwd()
+        # model_path = os.path.join(cwd, "random_forest_model1.pkl")
+        # model = joblib.load(open(model_path,'rb'))
+        model=joblib.load(open('random_forest_model1.pkl','rb'))
         
     except Exception as e:
         st.error(f'Why:{model}')
@@ -207,4 +208,5 @@ if st.button("Predict Car Price"):
             st.success(f'Predicted Car Price: ${np.round(predicted_price[0], 2)}')
         except Exception as e:  
             st.error(f"Prediction Error: {str(e)}")
+
 
